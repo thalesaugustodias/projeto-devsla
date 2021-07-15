@@ -1,0 +1,219 @@
+/*Variáveis*/
+:root {
+    --header-color: #000;
+    --h1-color: #393c41;
+    --btn-dark-bg: rgba(23, 26, 32, 0.8);
+    --btn-light-bg: rgba(255, 255, 255, 0.65);
+    --btn-dark-color: #fff;
+    --btn-light-color: #000 ;
+
+
+}
+
+
+/*Fontes*/
+@font-face {
+    font-family: GothamMedium;
+    src: url(../fonts/GothamMedium.otf);
+}
+@font-face {
+    font-family: GothamBook;
+    src: url(../fonts/GothamBookRegular.otf);
+}
+
+body {
+    font-family: 'GothamMedium', Helvetica, Arial;
+    font-size: 14px;
+    margin: 0;
+    
+}
+/*Header formatação em todo o cabeçalho*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /*fixar o menu */
+    left: 0; /* expandir a lateral para receber a bck todo*/
+    right: 0; /* expandir a lateral para receber a bck todo*/
+    top: 0; /* expandir a lateral para receber a bck todo*/
+
+    
+}
+header ul, header li {
+    list-style: none;
+}
+header .logo {
+    width: 120px;
+    margin-left: 20px;
+}
+
+/* Menu central */
+
+.middle ul {
+    display: flex;
+}
+.middle li {
+    margin: 0 10px;
+}
+header .middle a {
+    text-decoration: none;
+    color: var(--header-color);
+    text-transform: uppercase;
+}
+
+/* Menu lateral (direita) */
+
+.rightside ul {
+    display: flex;
+}
+.rightside li {
+    margin: 0 10px;
+}
+header .rightside a {
+    text-decoration: none;
+    color: var(--header-color);
+    text-transform: uppercase;
+}
+
+/*Menu Icon*/
+
+header .menu--icon {
+    width: 18px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+header .menu--icon div {
+    height: 2px;
+    background-color: var(--header-color);
+}
+
+/******************************************************/
+
+/*Main - conteúdo*/
+main {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+main .info {
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main h1 {
+    margin: 0;
+    font-size: 40px;
+    color: var(--h1-color);
+}
+main h2 {
+    margin: 0;
+    font-size: 14px;
+    color: var(--h1-color);
+    font-weight: normal;
+    font-family: 'GothamBook', helvetica, arial;
+}
+main h2 a {
+    color: var(--h1-color);
+}
+
+/******************************************************/
+/*Foooter - Rodapé*/
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+footer .button {
+    display: flex;
+    justify-content: center;
+}
+footer .button a {
+    display: block;
+    width: 220px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 0 10px;
+}
+footer .btn-dark {
+    background-color: var(--btn-dark-bg);
+    color: var(--btn-dark-color);
+}
+footer .btn-light {
+    background-color: var(--btn-light-bg);
+    color:var(--btn-light-color);
+}
+footer .arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    height: 30px;
+}
+@keyframes down{
+   0% {
+    margin-top: 0px;
+    }
+    50% {
+        margin-top: 15px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+footer .down {
+    height: 15px;
+    animation-name: down;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+    
+footer .down {
+    height: 15px;
+}
+/*******************Responsive****************/
+
+@media (max-width: 1200px) {
+    header .middle {
+        display: none;
+    }
+    header .rightside li {
+        display:none;
+    }
+    header  li.menu--icon  {
+        display: block;
+        margin-right: 20px;
+        width: 18px;
+        height: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 600px){
+    footer .button {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .button a {
+        margin: 10px 20px;
+        width: calc(100vw - 60px);
+    }
+    main {
+        display: block;
+    }
+}
